@@ -2,17 +2,24 @@
 
 sudo apt-get install -y nfs-kernel-server
 
+## Create directory /srv/data 
+
 sudo mkdir -p /srv/data
+
+sudo chmod -R 777 /srv/data    # only make this for test
+
+## Configuration of /etc/exports
 
 echo "/srv/data 176.16.0.4(rw,sync,no_root_squash,no_subtree_check)" | sudo tee -a /etc/exports
 
-sudo systemctl restart nfs-server rpcbind
+## Restart nfs-server
 
 sudo exportfs -a
 
-sudo chmod -R 777 /srv/data    # only for test 
+sudo systemctl restart nfs-server rpcbind
 
-## on the client
+
+## on the client install nfs-common
 
 sudo apt install -y nfs-common
 
