@@ -3,7 +3,7 @@
 
 Pour garantir la persistance des données, un serveur NFS externe est utilisé comme backend de stockage.
 Ce serveur NFS servant de backend de stockage a été déployé et configuré au préalable. 
-Ainsi, les données de la base de donnée ne dépendent pas du cycle de vie du Pod Kubernetes. 
+Ainsi, les données de la base de donnée ne dépendent pas du cycle de vie des Pods Kubernetes. 
 
 
 
